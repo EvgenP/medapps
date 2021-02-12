@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Evams</title>
+    <script src="https://apps.medhub.pro/evams/en/js/Evams.js"></script>
+    <link href="https://apps.medhub.pro/evams/css/style_Evams.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://apps.medhub.pro/evams/css/normalize.css" />
+    <link rel="icon" href="https://apps.medhub.pro/evams/img/1.png">
+    <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ 
+    ym(70716103, "init", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true
+    });
+ </script>
+ <!-- /Yandex.Metrika counter -->
+</head>
+
+
+<body>
+    <div class="pj_wrapper">
+
+        <form class="pj_form" id="forma" action="#" method="POST">
+            <div class="pj_content_left">
+                <div class="lang">
+                    <span><a href="https://apps.medhub.pro/evams">RU</a> / <b>EN</b></span>
+                </div>
+                <h1 class="pj_zagolovok">How old<br>are your<span class="pj_sred"> vessels</span>?</h1>
+                <hr>
+                <div class="pj_pol"><span>Your gender:</span>
+                    <div class="pj_right">
+                        <input id="m_pol" type="radio" name="sex" value="male">
+                        <label for="m_pol">Male</label>
+                        <input id="z_pol" type="radio" name="sex" value="female">
+                        <label for="z_pol">Female</label>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="pj_vozrast">
+                    <label for="Vozr"><span >Your age:</span></label><br>
+                    <div class="pj_right">
+                        <input id="Vozr" type="number" name="age" value="" placeholder="Years">
+
+                    </div>
+                </div>
+                <hr>
+                <div class="pj_ves">
+                    <label for="ves"><span >Your weight:</span></label><br>
+                    <div class="pj_right">
+                        <input id="ves" type="number" name="vves" value="" placeholder="kg">
+
+                    </div>
+                </div>
+                <hr>
+                <div class="pj_mk">
+                    <label for="MKM"><span >Your uric acid level :</span></label><br>
+                    <div class="pj_right">
+                        <input id="MKM" type="number" name="mkm" value="" placeholder="(μmol/L)">
+
+                    </div>
+                </div>
+                <hr>
+                <div class="pj_hoir">
+                    <label for="hoir"><span >HOMA-IR:</span> </label><br>
+                    <div class="pj_right">
+                        <input id="hoir" type="number" name="HOMA_IR" value="" placeholder="index-ir">
+
+                    </div>
+                </div>
+                <hr>
+
+                <div class="pj_cd">
+                    <span>Diabetes mellitus type 2:</span>
+                    <div class="pj_right">
+                        <input id="cd_v_d" type="radio" name="cd" value="1">
+                        <label for="cd_v_d">Yes</label>
+                        <input id="cd_v_n" type="radio" name="cd" value="0">
+                        <label for="cd_v_n">No</label>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="pj_insul">
+                    <span class="insh">Clinical insulinresistance:
+                        <sup class="pj_help_ins">
+                            <p class="pj_rcv">
+                                <img src="https://apps.medhub.pro/evams/img/imageeng.png" alt="">
+                            </p>
+    
+                        </sup>
+                    </span>
+
+                    <div class="pj_right">
+                        <input id="ins_r_d" type="radio" name="insul_resis" value="1">
+                        <label for="ins_r_d">Yes</label>
+                        <input id="ins_r_n" type="radio" name="insul_resis" value="0">
+                        <label for="ins_r_n">No</label>
+                    </div>
+
+                </div>
+                <hr>
+                <div class="pj_nbutton">
+                    <input class="pj_rbtn" type="reset" value="Reset" onclick="resetjs()">
+                    <div class="pj_right">
+                        <input class="pj_rezbtn" type="button" name="Sumbit" value="Show result" onclick="summa()" />
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="pj_content_right">
+                <div class="voz_sosudr">
+                    <h1>Your vascular age:</h1>
+
+                </div>
+
+
+                <h1 class="pj_ans2" id="ans2"></h1>
+
+
+                <div id="images" class="pj_imgjs">
+                    <img id="img">
+
+
+
+
+                </div>
+                <div id="trec"></div>
+
+            </div>
+        </form>
+        <footer>
+            <p class="pj_footconteiner">
+                © VAmets - calculator for calculating vascular age (VA) and a method for diagnosing early vascular aging syndrome (EVA) in patients with metabolic syndrome (MetS) using equations developed as part of the research work "Prevention of early vascular aging and differentiated drug angioprotection in patients with metabolic syndrome" (supervisor - Prof. S.V. Nedogoda, executor - Ph.D., A.S. Salasyuk). VAmets does not send any information to the server and can be used completely online.
+            </p>
+            <p>
+                Developed and published with the support of <a href="https://medhub.pro">MedHub</a>
+            </p>
+            <p>
+                <a href="https://medhub.pro"><img src="https://apps.medhub.pro/evams/img/logo-medhub.png" alt="MedHub logo"></a>
+            </p>
+        </footer>
+    </div>
+
+</body>
+
+
+</html>
